@@ -55,7 +55,11 @@
    I had to utilize component state after data fetching to share results between pages on _app.jsx component, which is not ideal for server side rendering. If time would permit, a state management library like redux can be used to share state between pages as well as the server for better performance.
 ** React-select
    I have used react-select as a the dropdown component since it allows for multi-select and has an intiutive interface. Unfortunately new version has a fresh server side rendering issue which awaits to be resolved ([[https://github.com/JedWatson/react-select/issues/3590][github issue]]).
-   
+** Recharts
+   I have decided to use recharts since it provides a good abstract over d3.js. d3.js has great tools for data visualization but for this context using an abtraction to solve common problems is a more efficient approach.
+** Ramda
+   I have decided to utilize ramda for data transformations since it has great affordance for composition and allow for clean functional programming patterns. 
+
 * Time Spent
 ** Create Readme
    :LOGBOOK:
@@ -73,7 +77,12 @@
    :LOGBOOK:
    CLOCK: [2019-06-04 Tue 22:36]--[2019-06-04 Tue 23:48] =>  1:12
    :END:
-   
+** Implement overview page chart
+   :LOGBOOK:
+   CLOCK: [2019-06-05 Wed 00:05]--[2019-06-05 Wed 01:13] =>  1:08
+   :END:
+
+
 * Resources
 ** Survey: [[https://www.kaggle.com/osmi/mental-health-in-tech-survey/data][dataset on Kaggle]]
 ** Convert cvs to json: [[https://csvjson.com/csv2json][cvsjson web app]]

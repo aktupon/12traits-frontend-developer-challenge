@@ -2,6 +2,7 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import Survey from '../api/survey';
 import Header from '../layout/header';
+import Page from '../layout/page';
 
 const limitOptions = [
   { value: 100, label: '100' },
@@ -47,18 +48,20 @@ class MyApp extends App {
 
     return (
       <Container>
-        <Header
-          selectedOption={selectedLimitOption}
-          limitOptions={limitOptions}
-          onLimitChange={this.handleFetchLimitChange}
-        />
-        <Component {...pageProps} results={surveyResults} />
-        <style global jsx>{`
-          body {
-            margin: 0; 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-          }
-        `}</style>
+        <Page>
+          <Header
+            selectedOption={selectedLimitOption}
+            limitOptions={limitOptions}
+            onLimitChange={this.handleFetchLimitChange}
+          />
+          <Component {...pageProps} results={surveyResults} />
+          <style global jsx>{`
+            body {
+              margin: 0; 
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            }
+          `}</style>
+        </Page>
       </Container>
     );
   }
