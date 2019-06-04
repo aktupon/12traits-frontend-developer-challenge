@@ -1,4 +1,5 @@
-function Overview() {
+function Overview({ results }) {
+  console.log(results);
   return <div>Survey Overview</div>;
 }
 

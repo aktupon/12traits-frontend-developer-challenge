@@ -1,5 +1,9 @@
 * Description
   A simple dashboard that visualizes 'Mental Health in the Tech Workplace in 2014' survey results.
+
+* Dependencies
+** yarn
+  [[https://yarnpkg.com/en/docs/install#mac-stable][installation guide]] 
   
 * Components
   Application consists of two pages, user can use links on header to navigate between.
@@ -58,7 +62,12 @@
    :LOGBOOK:
    CLOCK: [2019-06-04 Tue 21:16]--[2019-06-04 Tue 21:23] =>  0:07
    :END:
- 
- 
+** Create mock backend and implement simple API
+   :LOGBOOK:
+   CLOCK: [2019-06-04 Tue 21:25]--[2019-06-04 Tue 22:18] =>  0:53
+   :END:
+   
+   
 * Resources
 ** Survey: [[https://www.kaggle.com/osmi/mental-health-in-tech-survey/data][dataset on Kaggle]]
+** Convert cvs to json: [[https://csvjson.com/csv2json][cvsjson web app]]
