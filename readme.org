@@ -52,6 +52,9 @@
 * Technologies Used
 ** Next.js
    I have decided to build the application around next.js since it has very little overhead to start with, but provides great flexibility and preformance down the road.
+   I had to utilize component state after data fetching to share results between pages on _app.jsx component, which is not ideal for server side rendering. If time would permit, a state management library like redux can be used to share state between pages as well as the server for better performance.
+** React-select
+   I have used react-select as a the dropdown component since it allows for multi-select and has an intiutive interface. Unfortunately new version has a fresh server side rendering issue which awaits to be resolved ([[https://github.com/JedWatson/react-select/issues/3590][github issue]]).
    
 * Time Spent
 ** Create Readme
@@ -66,7 +69,10 @@
    :LOGBOOK:
    CLOCK: [2019-06-04 Tue 21:25]--[2019-06-04 Tue 22:18] =>  0:53
    :END:
-   
+** Add header component as layout
+   :LOGBOOK:
+   CLOCK: [2019-06-04 Tue 22:36]--[2019-06-04 Tue 23:48] =>  1:12
+   :END:
    
 * Resources
 ** Survey: [[https://www.kaggle.com/osmi/mental-health-in-tech-survey/data][dataset on Kaggle]]
