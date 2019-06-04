@@ -1,0 +1,57 @@
+* Description
+  A simple dashboard that visualizes 'Mental Health in the Tech Workplace in 2014' survey results.
+  
+* Components
+  Application consists of two pages, user can use links on header to navigate between.
+  
+** Top Level <App>
+   Responsible for fetching survey data and providing it to the pages. That way we don't have to refetch between page transitions.
+   
+*** Component State
+    - Fetch limit (controlled by the dropdown on the navigation bar)
+   
+** Navigation Bar
+   - Provides links to pages documented below.
+   - Has a dropdown element to choose amount of entries to display.
+
+** Overview Page
+*** Component State
+    - Chart Selection
+      - property to be displayed
+      - property type (normalized or raw)
+
+*** Main Chart
+**** X-Axis
+     Countries
+**** Y-Axis
+     - Number of survey entries (raw)
+     - Ages (normalized)
+     - Gender
+     - Family History
+     - Seek Treatment
+
+** Details Page
+*** Component State
+    - Country
+    - Number of employees
+
+*** Charts
+**** Comparison of Have Benefits vs. No Benefits
+     - Discuss with coworkers
+     - Discuss with supervisor
+**** Tech vs No Tech
+     - Care options
+**** People who have sought help by age distribution
+     - Age group / percentage
+**** Correlation of Work interference vs. Sought Help
+     
+  
+* Time Spent
+** Create Readme
+   :LOGBOOK:
+   CLOCK: [2019-06-04 Tue 20:47]--[2019-06-04 Tue 21:11] =>  0:24
+   :END:
+   
+   
+* Resources
+** Survey: [[https://www.kaggle.com/osmi/mental-health-in-tech-survey/data][dataset on Kaggle]]
