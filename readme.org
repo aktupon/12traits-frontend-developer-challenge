@@ -44,14 +44,21 @@
 **** People who have sought help by age distribution
      - Age group / percentage
 **** Correlation of Work interference vs. Sought Help
-     
-  
+
+* Technologies Used
+** Next.js
+   I have decided to build the application around next.js since it has very little overhead to start with, but provides great flexibility and preformance down the road.
+   
 * Time Spent
 ** Create Readme
    :LOGBOOK:
    CLOCK: [2019-06-04 Tue 20:47]--[2019-06-04 Tue 21:11] =>  0:24
    :END:
-   
-   
+** Bootstrap application
+   :LOGBOOK:
+   CLOCK: [2019-06-04 Tue 21:16]--[2019-06-04 Tue 21:23] =>  0:07
+   :END:
+ 
+ 
 * Resources
 ** Survey: [[https://www.kaggle.com/osmi/mental-health-in-tech-survey/data][dataset on Kaggle]]
