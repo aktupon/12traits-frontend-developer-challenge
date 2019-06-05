@@ -20,19 +20,22 @@
 
 ** Overview Page
 *** Component State
-    - Chart Selection
-      - property to be displayed
-      - property type (normalized or raw)
+    - Chart Property Selection
+      - property to be displayed and associated transformation function
 
 *** Main Chart
 **** X-Axis
      Countries
 **** Y-Axis
-     - Number of survey entries (raw)
-     - Ages (normalized)
+     - Number of survey entries
+     - Ages
      - Gender
      - Family History
      - Seek Treatment
+**** Next Steps
+     - As a next step, instead of defining dataKeys in the code, it should be extracted them from the transformed data itself.
+     - A description of the selected property would be helpful of users.
+     - Yes / No categories can be normalized to 1. Viewing distribution maybe more useful then viewing participation amount.
 
 ** Details Page
 *** Component State
@@ -41,13 +44,36 @@
 
 *** Charts
 **** Comparison of Have Benefits vs. No Benefits
-     - Discuss with coworkers
-     - Discuss with supervisor
+     Bar Chart with Composite Axis
+***** X-Axis
+       - Have Benefits
+         - Discuss with coworkers
+         - Discuss with supervisor
+       - No Benefits
+         - Discuss with coworkers
+         - Discuss with supervisor
+***** Y-Axis
+      Percentage of people answered yes 
+
 **** Tech vs No Tech
-     - Care options
+     Simple Bar chart
+***** X-Axis
+      - Tech
+      - No Tech
+***** Y-Axis
+      - Percentage of care options available
 **** People who have sought help by age distribution
-     - Age group / percentage
+     Bar Chart
+***** X-Axis
+      - Age group   
+***** Y-Axis
+      - Sought Help / Didn't seek help
 **** Correlation of Work interference vs. Sought Help
+     Bar Chart
+***** X-Axis
+      - Work Interference
+***** Y-Axis
+      - Sought Help / Didn't seek help
 
 * Technologies Used
 ** Next.js
@@ -61,6 +87,23 @@
    I have decided to utilize ramda for data transformations since it has great affordance for composition and allow for clean functional programming patterns. 
 
 * Time Spent
+#+BEGIN: clocktable :scope subtree :maxlevel 2
+#+CAPTION: Clock summary at [2019-06-05 Wed 23:00]
+| Headline                                 | Time   |      |
+|------------------------------------------+--------+------|
+| *Total time*                             | *5:55* |      |
+|------------------------------------------+--------+------|
+| Time Spent                               | 5:55   |      |
+| \_  Create Readme                        |        | 0:24 |
+| \_  Bootstrap application                |        | 0:07 |
+| \_  Create mock backend and implement... |        | 0:53 |
+| \_  Add header component as layout       |        | 1:12 |
+| \_  Implement overview page chart        |        | 1:08 |
+| \_  Sanitize and catagorize data         |        | 0:35 |
+| \_  Allow users to interact with the...  |        | 1:11 |
+| \_  Refactor distribution extraction     |        | 0:25 |
+#+END:
+
 ** Create Readme
    :LOGBOOK:
    CLOCK: [2019-06-04 Tue 20:47]--[2019-06-04 Tue 21:11] =>  0:24
@@ -93,7 +136,6 @@
    :LOGBOOK:
    CLOCK: [2019-06-05 Wed 22:21]--[2019-06-05 Wed 22:46] =>  0:25
    :END:
-
 
 * Resources
 ** Survey: [[https://www.kaggle.com/osmi/mental-health-in-tech-survey/data][dataset on Kaggle]]
