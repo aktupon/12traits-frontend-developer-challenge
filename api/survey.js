@@ -35,7 +35,7 @@ const Survey = {
       if (age < 24) return assocAge('0-23', result);
       if (age < 36) return assocAge('24-35', result);
       if (age < 45) return assocAge('36-44', result);
-      if (age < 61) return assocAge('46-60', result);
+      if (age < 61) return assocAge('45-60', result);
       return assocAge('over 61');
     })(surverResults);
   },
