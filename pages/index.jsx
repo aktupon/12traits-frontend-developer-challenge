@@ -3,94 +3,68 @@ import Select from 'react-select';
 import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis, LabelList, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
-import { compose, map, addIndex, toPairs, countBy, groupBy, prop } from 'ramda';
+import { compose, map, addIndex, toPairs, fromPairs, countBy, groupBy, prop } from 'ramda';
+
+const dataKeys = {
+  'Gender': ['Male', 'Female', 'Other'],
+  'Ages': ['0-23', '24-35', '36-44', '45-60', 'over 61'],
+  'Family History': ['Yes', 'No'],
+  'Sought Treatment': ['Yes', 'No'],
+};
+
+const extractByKeys = (keys) => ([country, distribution]) => ({
+  country,
+  ...compose(
+    fromPairs,
+    map(key => [key, distribution[key]]),
+  )(keys),
+}) 
+
+const calculatePropertyDistribution = (property, keys) => compose(
+  map(extractByKeys(keys)),
+  toPairs(),
+  map(countryResult => countBy(prop(property), countryResult)),
+  groupBy(prop('Country')),
+);
 
 const displayPropertyOptions = [
   {
-    label: "Number of survey entries",
+    label: 'Number of survey entries',
     value: {
       transformation: compose(
-        map(([country, count]) => ({ country, "Number of Survey Entries": count })),
+        map(([country, count]) => ({ country, 'Number of Survey Entries': count })),
         toPairs(),
         countBy(prop('Country')),
       ),
-      dataKeys: ["Number of Survey Entries"],
+      dataKeys: ['Number of Survey Entries'],
     },
   },
   {
-    label: "Gender", 
+    label: 'Gender', 
     value: {
-      transformation: compose(
-        map(([country, genderCounts]) => ({
-          country,
-          Male: genderCounts['Male'],
-          Female: genderCounts['Female'],
-          Other: genderCounts['Other'],
-        })),
-        toPairs(),
-        map(countryResult =>
-          countBy(prop('Gender'), countryResult),
-        ),
-        groupBy(prop('Country')),
-      ),
-      dataKeys: ['Male', 'Female', 'Other'],
+      transformation: calculatePropertyDistribution('Gender', dataKeys['Gender']),
+      dataKeys: dataKeys['Gender'],
     },
   },
   {
-    label: "Ages", 
+    label: 'Ages', 
     value: {
-      transformation: compose(
-        map(([country, ageGroupCounts]) => ({
-          country,
-          '0-23': ageGroupCounts['0-23'],
-          '24-35': ageGroupCounts['24-35'],
-          '36-44': ageGroupCounts['36-44'],
-          '45-60': ageGroupCounts['45-60'],
-          'over 61': ageGroupCounts['over 61'],
-        })),
-        toPairs(),
-        map(countryResult =>
-          countBy(prop('Age'), countryResult),
-        ),
-        groupBy(prop('Country')),
-      ),
-      dataKeys: ['0-23', '24-35', '36-44', '45-60', 'over 61'],
+      transformation: calculatePropertyDistribution('Age', dataKeys['Ages']),
+      dataKeys: dataKeys['Ages'],
     }
   },
   {
-    label: "Family History", 
+    label: 'Family History', 
     value: {
-      transformation: compose(
-        map(([country, familyHistoryDistribution]) => ({
-          country,
-          'Yes': familyHistoryDistribution['Yes'],
-          'No': familyHistoryDistribution['No'],
-        })),
-        toPairs(),
-        map(countryResult =>
-          countBy(prop('family_history'), countryResult),
-        ),
-        groupBy(prop('Country')),
-      ),
-      dataKeys: ['Yes', 'No'],
+      transformation: calculatePropertyDistribution('family_history', dataKeys['Family History']),
+      dataKeys: dataKeys['Family History']
     }
   },
   {
-    label: "Sought Treatment",
+    label: 'Sought Treatment',
     value: {
-      transformation: compose(
-        map(([country, treatmentDistribution]) => ({
-          country,
-          'Yes': treatmentDistribution['Yes'],
-          'No': treatmentDistribution['No'],
-        })),
-        toPairs(),
-        map(countryResult =>
-          countBy(prop('treatment'), countryResult),
-        ),
-        groupBy(prop('Country')),
-      ),
-      dataKeys: ['Yes', 'No'],
+      transformation: calculatePropertyDistribution('treatment', dataKeys['Sought Treatment']),
+      dataKeys: dataKeys['Sought Treatment'],
     }
   },
 ];
