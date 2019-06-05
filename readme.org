@@ -81,6 +81,10 @@
    :LOGBOOK:
    CLOCK: [2019-06-05 Wed 00:05]--[2019-06-05 Wed 01:13] =>  1:08
    :END:
+** Sanitize and catagorize data
+   :LOGBOOK:
+   CLOCK: [2019-06-05 Wed 20:06]--[2019-06-05 Wed 20:41] =>  0:35
+   :END:
 
 
 * Resources
