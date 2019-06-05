@@ -33,9 +33,9 @@
      - Family History
      - Seek Treatment
 **** Next Steps
-     - As a next step, instead of defining dataKeys in the code, it should be extracted them from the transformed data itself.
-     - A description of the selected property would be helpful of users.
-     - Yes / No categories can be normalized to 1. Viewing distribution maybe more useful then viewing participation amount.
+     - As a next step, instead of defining dataKeys in the code, they should be extracted from the transformed data itself.
+     - A small description of the selected property would be helpful for users.
+     - Yes / No categories can be normalized to 1 and shown as percentages. Viewing distribution could be more useful without the envelope of participation amount.
 
 ** Details Page
 *** Component State
@@ -103,39 +103,6 @@
 | \_  Allow users to interact with the...  |        | 1:11 |
 | \_  Refactor distribution extraction     |        | 0:25 |
 #+END:
-
-** Create Readme
-   :LOGBOOK:
-   CLOCK: [2019-06-04 Tue 20:47]--[2019-06-04 Tue 21:11] =>  0:24
-   :END:
-** Bootstrap application
-   :LOGBOOK:
-   CLOCK: [2019-06-04 Tue 21:16]--[2019-06-04 Tue 21:23] =>  0:07
-   :END:
-** Create mock backend and implement simple API
-   :LOGBOOK:
-   CLOCK: [2019-06-04 Tue 21:25]--[2019-06-04 Tue 22:18] =>  0:53
-   :END:
-** Add header component as layout
-   :LOGBOOK:
-   CLOCK: [2019-06-04 Tue 22:36]--[2019-06-04 Tue 23:48] =>  1:12
-   :END:
-** Implement overview page chart
-   :LOGBOOK:
-   CLOCK: [2019-06-05 Wed 00:05]--[2019-06-05 Wed 01:13] =>  1:08
-   :END:
-** Sanitize and catagorize data
-   :LOGBOOK:
-   CLOCK: [2019-06-05 Wed 20:06]--[2019-06-05 Wed 20:41] =>  0:35
-   :END:
-** Allow users to interact with the overview chart
-   :LOGBOOK:
-   CLOCK: [2019-06-05 Wed 20:59]--[2019-06-05 Wed 22:10] =>  1:11
-   :END:
-** Refactor distribution extraction
-   :LOGBOOK:
-   CLOCK: [2019-06-05 Wed 22:21]--[2019-06-05 Wed 22:46] =>  0:25
-   :END:
 
 * Resources
 ** Survey: [[https://www.kaggle.com/osmi/mental-health-in-tech-survey/data][dataset on Kaggle]]
